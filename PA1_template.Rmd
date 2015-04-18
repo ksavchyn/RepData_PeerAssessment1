@@ -67,7 +67,7 @@ frame <-data.frame(a, median=b$median)
 per_day <- tableCat(frame)
 
 ```
-The below describes the mean and median steps taken within each day. *If you know how to make the lines between columns appear - please, please let me know in the comments. Also if you know a better way to get tables to show up in html when writing them in markdown, please, please let me know in the comments.*
+The below describes the mean and median steps taken within each day. 
 ```{r}
 cat(per_day, sep="\n")  
 ```
