@@ -221,7 +221,21 @@ Data$date &lt;- as.Date(Data$date)
 <p>Calculate total # of steps for each day and make a histogram</p>
 
 <pre><code class="r">library(dplyr)
-daily_total &lt;- group_by(Data, date)
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;
+## 
+## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter
+## 
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union
+</code></pre>
+
+<pre><code class="r">daily_total &lt;- group_by(Data, date)
 daily_total &lt;- summarize(daily_total, total_steps=sum(steps, na.rm=T))
 total_steps_hist &lt;- hist(daily_total$total_steps, xlab=&quot;Total Steps Taken Each Day&quot;, main=&quot;Frequency of Total Steps Taken Each Day&quot;, labels=T)
 </code></pre>
@@ -283,7 +297,7 @@ frame &lt;-data.frame(a, median=b$median)
 per_day &lt;- tableCat(frame)
 </code></pre>
 
-<p>The below describes the mean and median steps taken within each day. <em>If you know how to make the lines between columns appear - please, please let me know in the comments. Also if you know a better way to get tables to show up in html when writing them in markdown, please, please let me know in the comments.</em></p>
+<p>The below describes the mean and median steps taken within each day. </p>
 
 <pre><code class="r">cat(per_day, sep=&quot;\n&quot;)  
 </code></pre>

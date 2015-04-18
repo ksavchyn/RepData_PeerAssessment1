@@ -26,6 +26,22 @@ Calculate total # of steps for each day and make a histogram
 
 ```r
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+## 
+## The following object is masked from 'package:stats':
+## 
+##     filter
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 daily_total <- group_by(Data, date)
 daily_total <- summarize(daily_total, total_steps=sum(steps, na.rm=T))
 total_steps_hist <- hist(daily_total$total_steps, xlab="Total Steps Taken Each Day", main="Frequency of Total Steps Taken Each Day", labels=T)
@@ -78,7 +94,7 @@ frame <-data.frame(a, median=b$median)
   
 per_day <- tableCat(frame)
 ```
-The below describes the mean and median steps taken within each day. *If you know how to make the lines between columns appear - please, please let me know in the comments. Also if you know a better way to get tables to show up in html when writing them in markdown, please, please let me know in the comments.*
+The below describes the mean and median steps taken within each day. 
 
 ```r
 cat(per_day, sep="\n")  
